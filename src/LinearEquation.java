@@ -4,70 +4,27 @@ public class LinearEquation {
     private int x2;
     private int y2;
 
-
-
-
-
-
-
-
     public LinearEquation(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
+    
     public double distance() {
         double distanceEquation = Math.sqrt(Math.pow((x2-x1), 2) + Math.pow((y2-y1), 2));
         return Math.round(distanceEquation * 100) / 100.0;
     }
-
-
-
-
-
-
-
 
     public double yIntercept() {
         double slope = slope();
         return y1 - (slope * x1);
     }
 
-
-
-
-
-
-
-
     public double slope() {
         double slopeUnrounded = (double) (y2-y1) / (x2-x1);
         return roundToHundredth(slopeUnrounded);
     }
-
-
-
-
-
-
-
 
     public String equation() {
         if (y1 == y2) {
@@ -129,13 +86,6 @@ public class LinearEquation {
     public String vertLine() {
         return "\nThese points are on a vertical line: x = " + x1;
     }
-
-
-
-
-
-
-
 
     private double roundToHundredth(double toRound) {
         return Math.round(toRound * 100) / 100.0;
